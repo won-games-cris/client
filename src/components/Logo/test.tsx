@@ -25,4 +25,26 @@ describe('<Logo />', () => {
       color: '#030517'
     })
   })
+
+  it('should render a normal logo when size is default', () => {
+    // renderizar o component 'render'
+    // selecionar o elemento a ser testado 'screen' (queries) - getBy...
+    // expect - assertion - comparação - análise
+
+    renderWithTheme(<Logo />)
+    expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyle({
+      width: '11rem'
+    })
+  })
+
+  it('should render a bigger logo', () => {
+    // renderizar o component 'render'
+    // selecionar o elemento a ser testado 'screen' (queries) - getBy...
+    // expect - assertion - comparação - análise
+
+    renderWithTheme(<Logo size="large" />)
+    expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyle({
+      width: '20rem'
+    })
+  })
 })
